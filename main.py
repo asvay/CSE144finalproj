@@ -27,3 +27,31 @@ SAMPLE_SUBMISSION = "./data/sample_submission.csv"
 CKPT_PATH = "./checkpoints/best_model.pt"
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
+
+
+def set_seed(seed):
+    # same idea from HW2
+def build_transforms():
+    # resize, augment train images, normalize for pretrained model
+def build_dataloaders():
+    # load train folders with ImageFolder
+    # split into train/val
+    # return train_loader, val_loader, class_to_idx
+def build_model(num_classes=100):
+    # load pretrained ResNet/EfficientNet
+    # replace classifier head
+def train_one_epoch(model, loader, criterion, optimizer):
+    # reused from HW2
+@torch.no_grad()
+def evaluate(model, loader, criterion):
+    # reused from HW2
+def train_model():
+    # loop epochs
+    # save best checkpoint
+    # track history
+class TestImageDataset(Dataset):
+    # loads test images from sample_submission.csv order
+@torch.no_grad()
+def generate_submission(model, test_loader):
+    # predict labels
+    # write submission.csv
